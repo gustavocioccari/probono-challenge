@@ -13,7 +13,7 @@ const ClientSchema = new mongoose.Schema({
     lowercase: true,
   },
   cpf:{
-    type: Number,
+    type: String,
     unique: true,
     required: true,
   },
