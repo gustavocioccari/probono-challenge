@@ -19,10 +19,10 @@ const ProcessSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  progresses: {
+  progresses: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Progress',
-  },
+  }],
   createdAt:{
     type: Date,
     default: Date.now,
