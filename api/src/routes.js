@@ -1,18 +1,25 @@
 const express = require('express');
 
-const LawyerController = require('./controllers/LawyerController');
-const ClientController = require('./controllers/ClientController');
-const LawyerSessionController = require('./controllers/LawyerSessionController');
-const ClientSessionController = require('./controllers/ClientSessionController');
+const LawyerController = require('./Controllers/LawyerController');
+const ClientController = require('./Controllers/ClientController');
+const LawyerSessionController = require('./Controllers/LawyerSessionController');
+const ClientSessionController = require('./Controllers/ClientSessionController');
+const ProcessController = require('./Controllers/ProcessController');
 
 const routes = express.Router();
 
-routes.post('/registerlawyer', LawyerController.create);
+routes.post('/lawyer/register', LawyerController.create);
 
-routes.post('/registerclient', ClientController.create);
+routes.post('/client/register', ClientController.create);
 
-routes.post('/lawyerlogin', LawyerSessionController.create);
+routes.post('/lawyer/login', LawyerSessionController.create);
 
-routes.post('/clientlogin', ClientSessionController.create);
+routes.post('/client/login', ClientSessionController.create);
+
+routes.post('/lawyer/newprocess', ProcessController.create);
+routes.get('/lawyer/processes', ProcessController.lawyerlist);
+routes.get('/client/processes', ProcessController.clientlist);
+routes.get('/:projectId', ProcessController.listprocess);
+routes.delete('/:projectId', ProcessController.deleteprocess);
 
 module.exports = routes;
