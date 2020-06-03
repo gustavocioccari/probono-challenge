@@ -49,10 +49,10 @@ module.exports = {
   async listprocess(req, res){
     try{
       
-      const process = await Process.findById(req.params.projectId).populate(['lawyer', 'client']);
+      const process = await Process.findById(req.params.processId).populate(['lawyer', 'client']);
 
       if(!process)
-        return res.status(400).send({ error: 'There is no project with this id' });
+        return res.status(400).send({ error: 'There is no process with this id' });
 
       return res.send({ process });
     } catch (err){
@@ -63,7 +63,7 @@ module.exports = {
   async deleteprocess(req, res){
     try{
       
-      const process = await Process.findByIdAndDelete(req.params.projectId);
+      const process = await Process.findByIdAndDelete(req.params.processId);
 
       if(!process)
         return res.status(400).send({ error: 'There is no process with this id' });
