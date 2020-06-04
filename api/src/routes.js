@@ -23,6 +23,8 @@ routes.get('/client/processes', ProcessController.clientlist);
 routes.get('/:processId', ProcessController.listprocess);
 routes.delete('/:processId', ProcessController.deleteprocess);
 
+routes.post('/:processId', ProgressController.create);
+
 
 
 module.exports = routes;
