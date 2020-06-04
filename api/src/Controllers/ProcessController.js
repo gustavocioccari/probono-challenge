@@ -20,7 +20,7 @@ module.exports = {
     const { lawyer } = req.body;
     try{
       
-      const processes = await Process.find({ lawyer }).populate(['lawyer', 'client']);
+      const processes = await Process.find({ lawyer }).populate(['lawyer', 'client', 'progresses']);
 
       if(!processes)
         return res.status(400).send({ error:'This lawyer has no processes associated to him' });
@@ -35,7 +35,7 @@ module.exports = {
     const { client } = req.body;
     try{
       
-      const processes = await Process.find({ client }).populate(['lawyer', 'client']);
+      const processes = await Process.find({ client }).populate(['lawyer', 'client', 'progresses']);
 
       if(!processes)
         return res.status(400).send({ error: 'This client has no processes associated to him' });
