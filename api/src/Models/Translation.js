@@ -5,7 +5,7 @@ const TranslationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  translation:{
+  traduction:{
     type: String,
     required: true,
   },
