@@ -11,8 +11,10 @@ const TranslationController = require('./Controllers/TranslationController');
 const routes = express.Router();
 
 routes.post('/lawyer/register', LawyerController.create);
+routes.delete('/lawyer/:lawyerId', LawyerController.delete);
 
 routes.post('/client/register', ClientController.create);
+routes.delete('/client/:clientId', ClientController.delete);
 
 routes.post('/lawyer/login', LawyerSessionController.create);
 

@@ -20,5 +20,19 @@ module.exports = {
     } catch (err){
         return res.status(400).send({ error: 'Registration failed' });
     }
-  }
+  },
+
+  async delete(req, res){
+    try{
+      
+      const client = await Client.findByIdAndDelete(req.params.clientId);
+
+      if(!client)
+        return res.status(400).send({ error: 'There is no client with this id' });
+
+      return res.send('Client removed');
+    } catch (err){
+        return res.status(400).send({ error: 'Delete has failed' });
+    }
+  },
 }

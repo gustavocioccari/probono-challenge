@@ -16,5 +16,19 @@ module.exports = {
     } catch (err){
         return res.status(400).send({ error: 'Registration failed' });
     }
-  }
+  },
+
+  async delete(req, res){
+    try{
+      
+      const lawyer = await Lawyer.findByIdAndDelete(req.params.lawyerId);
+
+      if(!lawyer)
+        return res.status(400).send({ error: 'There is no lawyer with this id' });
+
+      return res.send('Lawyer removed');
+    } catch (err){
+        return res.status(400).send({ error: 'Delete has failed' });
+    }
+  },
 }

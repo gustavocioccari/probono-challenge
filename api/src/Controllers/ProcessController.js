@@ -49,7 +49,7 @@ module.exports = {
   async listprocess(req, res){
     try{
       
-      const process = await Process.findById(req.params.processId).populate(['lawyer', 'client']);
+      const process = await Process.findById(req.params.processId).populate(['lawyer', 'client', 'progresses']);
 
       if(!process)
         return res.status(400).send({ error: 'There is no process with this id' });
