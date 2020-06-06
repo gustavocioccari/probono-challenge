@@ -1,11 +1,10 @@
 import React from 'react';
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <p>
-        <code>Probono Challenge</code>
-      </p>
+    <div>
+      <Routes></Routes>
     </div>
   );
 }
