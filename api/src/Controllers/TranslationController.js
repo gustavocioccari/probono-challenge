@@ -10,7 +10,7 @@ module.exports = {
 
     const translation = await Translation.create(req.body);
 
-    return res.send({ translation });
+    return res.json({ translation });
     } catch (err){
         return res.status(400).send({ error: 'Translation has failed' });
     }

@@ -16,6 +16,6 @@ module.exports = {
   
     lawyer.password = undefined;
 
-    res.send({ lawyer });
+    res.json({ lawyer });
   }
 }

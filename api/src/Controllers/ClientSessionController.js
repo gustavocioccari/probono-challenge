@@ -16,6 +16,6 @@ module.exports = {
   
     client.password = undefined;
 
-    res.send({ client });
+    res.json({ client });
   }
 }

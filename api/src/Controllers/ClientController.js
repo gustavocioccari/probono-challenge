@@ -16,7 +16,7 @@ module.exports = {
 
       client.password = undefined;
 
-      return res.send({ client });
+      return res.json({ client });
     } catch (err){
         return res.status(400).send({ error: 'Registration failed' });
     }

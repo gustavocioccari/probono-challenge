@@ -12,7 +12,7 @@ module.exports = {
 
       lawyer.password = undefined;
 
-      return res.send({ lawyer });
+      return res.json({ lawyer });
     } catch (err){
         return res.status(400).send({ error: 'Registration failed' });
     }

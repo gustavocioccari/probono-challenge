@@ -10,7 +10,7 @@ module.exports = {
 
       const process = await Process.create(req.body);
 
-      return res.send({ process });
+      return res.json({ process });
     } catch (err){
         return res.status(400).send({ error: 'Process registration failed' });
     }
@@ -25,7 +25,7 @@ module.exports = {
       if(!processes)
         return res.status(400).send({ error:'This lawyer has no processes associated to him' });
 
-      return res.send({ processes });
+      return res.json({ processes });
     } catch (err){
         return res.status(400).send({ error: 'Search has failed' });
     }
@@ -40,7 +40,7 @@ module.exports = {
       if(!processes)
         return res.status(400).send({ error: 'This client has no processes associated to him' });
 
-      return res.send({ processes });
+      return res.json({ processes });
     } catch (err){
         return res.status(400).send({ error: 'Search has failed' });
     }
@@ -54,7 +54,7 @@ module.exports = {
       if(!process)
         return res.status(400).send({ error: 'There is no process with this id' });
 
-      return res.send({ process });
+      return res.json({ process });
     } catch (err){
         return res.status(400).send({ error: 'Search has failed' });
     }

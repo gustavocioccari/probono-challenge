@@ -13,6 +13,6 @@ module.exports = {
       process.progresses.push(progress);
       process.save();
       
-      return res.send({ process });        
+      return res.json({ process });        
     }
 }
